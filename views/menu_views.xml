@@ -1,0 +1,61 @@
+<odoo>
+    <menuitem id="menu_custom_sale_root" name="Custom Sale View" sequence="10"/>
+
+    <record id="action_custom_sale_list" model="ir.actions.client">
+        <field name="name">Custom JS List</field>
+        <field name="tag">verts_standard_dashboard.action</field>
+    </record>
+
+    <!-- <menuitem id="menu_custom_sale_list"
+              name="JS Order List"
+              parent="menu_custom_sale_root"
+              action="action_custom_sale_list"/> -->
+    
+    <!-- ✅ Dashboard Action for Sales -->
+    <record id="action_sale_order_dashboard" model="ir.actions.client">
+        <field name="name">Sale Order Dashboard</field>
+        <field name="tag">verts_standard_dashboard.sale_dashboard_action</field>
+    </record>
+
+    <!-- ✅ Dashboard Menu under Sales -->
+    <menuitem id="menu_sale_order_dashboard"
+              name="Dashboard"
+              parent="menu_custom_sale_root"
+              action="action_sale_order_dashboard"
+              sequence="1"/>
+
+    <!-- ✅ Make Dashboard Default When Clicking Sales App -->
+    <!-- <record id="sale.sale_order_menu" model="ir.ui.menu">
+        <field name="action" ref="verts_standard_dashboard.action_sale_order_dashboard"/>
+    </record> -->
+
+
+    <!-- Dashboard Menu Item -->
+    <menuitem id="menu_sale_dashboard" name="Sale Order Dashboard"
+                  parent="menu_custom_sale_root"
+                  action="action_sale_order_dashboard"/>
+                  
+    <!-- ✅ Dashboard Action for Purchase -->
+    <record id="action_purchase_order_dashboard" model="ir.actions.client">
+        <field name="name">Purchase Order Dashboard</field>
+        <field name="tag">verts_standard_dashboard.purchase_dashboard_action</field>
+    </record>
+
+    <!-- ✅ Dashboard Menu under Purchase -->
+    <menuitem id="menu_purchase_order_dashboard"
+              name="Dashboard"
+              parent="menu_custom_sale_root"
+              action="action_purchase_order_dashboard"
+              sequence="2"/>
+    <menuitem id="menu_custom_sale_list"
+              name="JS Order List"
+              parent="menu_custom_sale_root"
+              action="action_custom_sale_list"
+              sequence="3"/>
+
+    <!-- ✅ Make Dashboard Default When Clicking Purchase App -->
+    <!-- <record id="purchase.menu_purchase_root" model="ir.ui.menu">
+        <field name="action" ref="verts_standard_dashboard.action_purchase_order_dashboard"/>
+    </record> -->
+    
+</odoo>

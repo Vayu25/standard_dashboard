@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="verts_standard_dashboard.SaleOrderDashboard">
+        <div class="o_sale_dashboard container-fluid py-4">
+
+            <!-- Header -->
+            <div class="text-center mb-4">
+                <h2 class="fw-bold display-6 text-primary">
+                    Sale Order Status
+                </h2>
+                <p class="text-muted">
+                    View total sale orders grouped by current status
+                </p>
+            </div>
+
+            <!-- Refresh Button -->
+            <div class="d-flex justify-content-center mb-4">
+                <button class="btn btn-outline-primary px-4 shadow-sm fw-semibold" 
+                        t-on-click="onClickRefresh">
+                    🔄 Refresh Data
+                </button>
+            </div>
+
+            <!-- Sale Order Cards -->
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <t t-foreach="state.saleStats" t-as="stat" t-key="stat.key">
+                    <div class="card border-0 shadow-lg rounded-4 text-center" 
+                         style="width:220px; transition: transform 0.3s; cursor:pointer;">
+                        <div class="card-body py-4">
+                            <h5 class="text-uppercase text-secondary mb-2">
+                                <t t-esc="stat.label"/>
+                            </h5>
+                            <h2 class="fw-bold text-primary mb-0">
+                                <t t-esc="stat.count"/>
+                            </h2>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <!-- No Sale Orders -->
+            <t t-if="!state.saleStats.length">
+                <div class="text-center mt-5 text-secondary">
+                    <i>No Sale Orders Found</i>
+                </div>
+            </t>
+
+        </div>
+    </t>
+</templates>

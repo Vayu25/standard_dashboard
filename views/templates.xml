@@ -1,0 +1,40 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="SaleOrderCustomView" name="Sale Order Custom View" owl="1">
+        <div class="p-4 o_custom_sale_order_view">
+            <h2 class="text-lg font-bold mb-3">📦 Sale Orders (Custom JS View)</h2>
+            <button class="btn btn-primary mb-3" t-on-click="loadOrders">🔄 Refresh</button>
+
+            <t t-if="state.loading">
+                <p>Loading orders ...</p>
+            </t>
+            <t t-else="">
+                <table class="table table-sm table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="state.orders" t-as="o">
+                            <tr>
+                                <td><t t-esc="o.name"/></td>
+                                <td><t t-esc="o.partner_id[1]"/></td>
+                                <td><t t-esc="o.amount_total"/></td>
+                                <td><t t-esc="o.state"/></td>
+                            </tr>
+                        </t>
+                        <t t-if="!state.orders.length">
+                            <tr>
+                                <td colspan="4" class="text-center">No Sale Orders Found</td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+        </div>
+    </template>
+</odoo> -->

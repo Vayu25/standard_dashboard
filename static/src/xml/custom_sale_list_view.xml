@@ -1,0 +1,27 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="verts_standard_dashboard.ListView">
+        <div class="o_custom_sale_list_view p-4">
+            <h2>Custom Sale Orders</h2>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Order Name</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="state.records" t-as="rec" t-key="rec.id">
+                        <tr>
+                            <td><t t-esc="rec.name"/></td>
+                            <td><t t-esc="rec.partner_id[1]"/></td>
+                            <td><t t-esc="rec.date_order"/></td>
+                            <td><t t-esc="rec.amount_total"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</templates>
